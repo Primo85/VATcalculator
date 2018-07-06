@@ -9,17 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet private weak var bruttoTextField: UITextField!
+    @IBOutlet private weak var vatTextField: UITextField!
+    @IBOutlet private weak var nettoTextField: UITextField!
+    @IBOutlet private weak var rekaTextField: UITextField!
+    @IBOutlet private weak var texTextField: UITextField!
+    @IBOutlet private weak var zusTextField: UITextField!
+    
+    lazy var presenter: Presenter = {
+        return Presenter(view: self)
+    }()
+    
+    @IBAction func bruttoAction(_ sender: UITextField) {
+        presenter.brutto = Double(sender.text ?? "0") ?? 0.0
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func vatttoAction(_ sender: UITextField) {
+        presenter.VAT = Double(sender.text ?? "0") ?? 0.0
     }
-
-
+    @IBAction func nettoAction(_ sender: UITextField) {
+        presenter.netto = Double(sender.text ?? "0") ?? 0.0
+    }
+    @IBAction func rekaAction(_ sender: UITextField) {
+        presenter.reka = Double(sender.text ?? "0") ?? 0.0
+    }
+    @IBAction func texAction(_ sender: UITextField) {
+        presenter.TEX = Double(sender.text ?? "0") ?? 0.0
+    }
+    @IBAction func zusAction(_ sender: UITextField) {
+        presenter.ZUS = Double(sender.text ?? "0") ?? 0.0
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
 
+extension ViewController: ViewProtocol {
+    func reload() {
+        bruttoTextField.text = "\(presenter.brutto.intiger)"
+        vatTextField.text = "\(presenter.VAT.intiger)"
+        nettoTextField.text = "\(presenter.netto.intiger)"
+        rekaTextField.text = "\(presenter.reka.intiger)"
+        texTextField.text = "\(presenter.TEX.intiger)"
+        zusTextField.text = "\(presenter.ZUS.intiger)"
+    }
+}

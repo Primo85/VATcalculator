@@ -12,6 +12,7 @@
 		EDEEA85120EEBDF100DD3D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEEA84F20EEBDF100DD3D7E /* Main.storyboard */; };
 		EDEEA85320EEBDF200DD3D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEEA85220EEBDF200DD3D7E /* Assets.xcassets */; };
 		EDEEA85620EEBDF200DD3D7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEEA85420EEBDF200DD3D7E /* LaunchScreen.storyboard */; };
+		EDEEA85E20EEC2DA00DD3D7E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEEA85D20EEC2DA00DD3D7E /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EDEEA85220EEBDF200DD3D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDEEA85520EEBDF200DD3D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDEEA85720EEBDF200DD3D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDEEA85D20EEC2DA00DD3D7E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				EDEEA84B20EEBDF100DD3D7E /* AppDelegate.swift */,
 				EDEEA84D20EEBDF100DD3D7E /* ViewController.swift */,
+				EDEEA85D20EEC2DA00DD3D7E /* Presenter.swift */,
 				EDEEA84F20EEBDF100DD3D7E /* Main.storyboard */,
 				EDEEA85220EEBDF200DD3D7E /* Assets.xcassets */,
 				EDEEA85420EEBDF200DD3D7E /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEEA85E20EEC2DA00DD3D7E /* Presenter.swift in Sources */,
 				EDEEA84E20EEBDF100DD3D7E /* ViewController.swift in Sources */,
 				EDEEA84C20EEBDF100DD3D7E /* AppDelegate.swift in Sources */,
 			);
@@ -283,6 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33PBA72JFF;
 				INFOPLIST_FILE = VATcalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33PBA72JFF;
 				INFOPLIST_FILE = VATcalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
