@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet private weak var rekaTextField: UITextField!
     @IBOutlet private weak var texTextField: UITextField!
     @IBOutlet private weak var zusTextField: UITextField!
+    @IBOutlet private weak var hoursTextField: UITextField!
+    @IBOutlet private weak var rateTextField: UITextField!
     
-    lazy var presenter: Presenter = {
-        return Presenter(view: self)
+    lazy var presenter: BTBPresenter = {
+        return BTBPresenter(view: self)
     }()
     
     @IBAction func bruttoAction(_ sender: UITextField) {
@@ -39,6 +41,12 @@ class ViewController: UIViewController {
     @IBAction func zusAction(_ sender: UITextField) {
         presenter.ZUS = Double(sender.text ?? "0") ?? 0.0
     }
+    @IBAction func hoursAction(_ sender: UITextField) {
+        presenter.hours = Double(sender.text ?? "0") ?? 0.0
+    }
+    @IBAction func rateAction(_ sender: UITextField) {
+        presenter.hourlyRate = Double(sender.text ?? "0") ?? 0.0
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -54,5 +62,7 @@ extension ViewController: ViewProtocol {
         rekaTextField.text = "\(presenter.reka.intiger)"
         texTextField.text = "\(presenter.TEX.intiger)"
         zusTextField.text = "\(presenter.ZUS.intiger)"
+        hoursTextField.text = "\(presenter.hours.intiger)"
+        rateTextField.text = "\(presenter.hourlyRate.intiger)"
     }
 }

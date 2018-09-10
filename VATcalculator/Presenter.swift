@@ -1,5 +1,5 @@
 //
-//  Presenter.swift
+//  BTBPresenter.swift
 //  VATcalculator
 //
 //  Created by Przemyslaw Biskup on 05/07/2018.
@@ -12,7 +12,7 @@ protocol ViewProtocol: class {
     func reload()
 }
 
-final class Presenter {
+final class BTBPresenter {
     
     private weak var view: ViewProtocol?
     
@@ -84,6 +84,21 @@ final class Presenter {
     }
     
     var ZUS: Double = 320 {
+        didSet {
+            reload()
+        }
+    }
+    
+    var hours: Double {
+        get {
+            return reka / hourlyRate
+        }
+        set {
+            reka = newValue * hourlyRate
+        }
+    }
+    
+    var hourlyRate: Double = 22 {
         didSet {
             reload()
         }
