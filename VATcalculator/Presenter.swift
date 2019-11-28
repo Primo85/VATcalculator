@@ -94,7 +94,8 @@ final class BTBPresenter {
             return reka / hourlyRate
         }
         set {
-            reka = newValue * hourlyRate
+//            reka = newValue * hourlyRate
+            hourlyRate = reka / newValue
         }
     }
     

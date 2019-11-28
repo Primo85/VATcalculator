@@ -42,10 +42,10 @@ class ViewController: UIViewController {
         presenter.ZUS = Double(sender.text ?? "0") ?? 0.0
     }
     @IBAction func hoursAction(_ sender: UITextField) {
-        presenter.hours = Double(sender.text ?? "0") ?? 0.0
+        presenter.hours = Double(sender.text ?? "0") ?? 0.01
     }
     @IBAction func rateAction(_ sender: UITextField) {
-        presenter.hourlyRate = Double(sender.text ?? "0") ?? 0.0
+        presenter.hourlyRate = Double(sender.text ?? "0") ?? 0.01
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
